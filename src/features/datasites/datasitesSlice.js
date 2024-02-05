@@ -1,4 +1,3 @@
-import { DATA } from '../../app/shared/DATA';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { DATASITES } from '../../app/shared/DATASITES';
 import { baseUrl } from '../../app/shared/baseUrl';

@@ -7,6 +7,12 @@ import './App.css';
 import DataDetailPage from './pages/DataDetailPage';
 
 function App() {
+  // const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   dispatch(fetchData());
+  // }, [dispatch]);
+
   return (
     <div className='App'>
       <Header />
