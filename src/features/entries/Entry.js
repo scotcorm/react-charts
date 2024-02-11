@@ -1,5 +1,5 @@
-const Data = ({ data }) => {
-  const { year, label, completed, cohort, overlaps } = data;
+const Entry = ({ entry }) => {
+  const { year, label, completed, cohort, overlaps } = entry;
 
   return (
     <p>
@@ -12,4 +12,4 @@ const Data = ({ data }) => {
   );
 };
 
-export default Data;
+export default Entry;

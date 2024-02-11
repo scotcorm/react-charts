@@ -1,8 +1,8 @@
 // import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
 // import { Link } from 'react-router-dom';
 
-// const DataCard = ({ data }) => {
-//   const { id, year, label, completed, cohort, overlaps } = data;
+// const EntryCard = ({ data }) => {
+//   const { id, year, label, completed, cohort, overlaps } = entry;
 //   return (
 //     <Link to={`${id}`}>
 //       <Card>
@@ -17,4 +17,4 @@
 //   );
 // };
 
-// export default DataCard;
+// export default EntryCard;

@@ -1,12 +1,12 @@
-import createSlice from redux 
-import { DATA } from '../../app/shared/DATA';
-export const selectAllData = () => {
-  return DATA;
-};
+// import createSlice from redux
+// import { DATA } from '../../app/shared/DATA';
+// export const selectAllData = () => {
+//   return DATA;
+// };
 
-export const selectDataById = (id) => {
-  return DATA.find((data) => data.id === id);
-};
+// export const selectDataById = (id) => {
+//   return DATA.find((data) => data.id === id);
+// };
 
 // export const selectRandomCampsite = () => {
 //   return CAMPSITES[Math.floor(CAMPSITES.length * Math.random())];

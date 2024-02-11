@@ -3,10 +3,10 @@ import { Col } from 'reactstrap';
 import Entry from './Entry';
 
 import EntryForm from './EntryForm';
-import { selectEntriesByMetricId } from './entriesSlice';
+import { selectEntryById } from './entriesSlice';
 
-const EntriesList = ({ metricId }) => {
-  const entries = useSelector(selectEntriesByMetricId(metricId));
+const EntriesList = ({ entryId }) => {
+  const entries = useSelector(selectEntryById(entryId));
 
   if (entries && entries.length > 0) {
     return (
@@ -15,7 +15,7 @@ const EntriesList = ({ metricId }) => {
         {entries.map((entry) => {
           return <Entry key={entry.id} entry={entry} />;
         })}
-        <EntryForm metricId={metricId} />
+        <EntryForm metricId={entryId} />
       </Col>
     );
   }

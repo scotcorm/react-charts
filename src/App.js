@@ -4,7 +4,7 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 
 import './App.css';
-import DataDetailPage from './pages/DataDetailPage';
+import EntryDetailPage from './pages/EntryDetailPage';
 
 function App() {
   // const dispatch = useDispatch();
@@ -18,7 +18,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<HomePage />} />
-        <Route path='details' element={<DataDetailPage />} />
+        <Route path='details' element={<EntryDetailPage />} />
       </Routes>
 
       <Footer />

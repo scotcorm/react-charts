@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { ENTRIES } from '../../app/shared/ENTRIES';
+import { ENTRY } from '../../app/shared/ENTRIES';
 const initialState = {
-  entriesArray: ENTRIES,
+  entriesArray: ENTRY,
 };
 const entriesSlice = createSlice({
   name: 'entries',
@@ -23,9 +23,9 @@ export const entriesReducer = entriesSlice.reducer;
 
 export const { addEntry } = entriesSlice.actions;
 
-export const selectEntriesByMetricId = (metricId) => (state) => {
+export const selectEntryById = (entryId) => (state) => {
   return state.entries.entriesArray.filter(
-    (entry) => entry.metricId === parseInt(metricId)
+    (entry) => entry.metricId === parseInt(entryId)
   );
 };
 
