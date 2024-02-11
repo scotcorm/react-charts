@@ -54,17 +54,19 @@ const EntryForm = ({ dataId }) => {
                   name='year'
                   placeholder='Four Digit Year'
                   className='form-control'
+                  id='year'
                 />
                 <ErrorMessage name='year'>
                   {(msg) => <p className='text-danger'>{msg}</p>}
                 </ErrorMessage>
               </FormGroup>
               <FormGroup>
-                <Label htmlFor='month'>Month</Label>
+                <Label htmlFor='label'>Month</Label>
                 <Field
                   name='month'
                   placeholder='Full Text Version of Month'
                   className='form-control'
+                  id='label'
                 />
                 <ErrorMessage name='month'>
                   {(msg) => <p className='text-danger'>{msg}</p>}
@@ -76,6 +78,7 @@ const EntryForm = ({ dataId }) => {
                   name='completed'
                   placeholder='Number of Files Completed'
                   className='form-control'
+                  id='completed'
                 />
                 <ErrorMessage name='completed'>
                   {(msg) => <p className='text-danger'>{msg}</p>}
@@ -87,6 +90,7 @@ const EntryForm = ({ dataId }) => {
                   name='cohort'
                   placeholder='Number in Cohort'
                   className='form-control'
+                  id='cohort'
                 />
                 <ErrorMessage name='cohort'>
                   {(msg) => <p className='text-danger'>{msg}</p>}
@@ -98,6 +102,7 @@ const EntryForm = ({ dataId }) => {
                   name='overlaps'
                   placeholder='Number of Overlaps Completed'
                   className='form-control'
+                  id='overlaps'
                 />
                 <ErrorMessage name='overlaps'>
                   {(msg) => <p className='text-danger'>{msg}</p>}

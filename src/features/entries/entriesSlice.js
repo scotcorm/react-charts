@@ -8,8 +8,8 @@ const entriesSlice = createSlice({
   initialState,
   reducers: {
     addEntry: (state, action) => {
-      console.log('addComment action.payload:', action.payload);
-      console.log('addComment state.entriesArray:', state.entriesArray);
+      console.log('addEntry action.payload:', action.payload);
+      console.log('addEntry state.entriesArray:', state.entriesArray);
       const newEntry = {
         id: state.entriesArray.length + 1,
         ...action.payload,
@@ -23,9 +23,9 @@ export const entriesReducer = entriesSlice.reducer;
 
 export const { addEntry } = entriesSlice.actions;
 
-export const selectEntryById = (entryId) => (state) => {
+export const selectEntryById = (id) => (state) => {
   return state.entries.entriesArray.filter(
-    (entry) => entry.metricId === parseInt(entryId)
+    (entry) => entry.id === parseInt(id)
   );
 };
 
