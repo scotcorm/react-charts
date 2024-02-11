@@ -1,0 +1,182 @@
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import {
+  Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  FormGroup,
+  Label,
+} from 'reactstrap';
+import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { validateEntryForm } from '../../utils/validateEntryForm';
+
+import { addEntry } from './entriesSlice';
+
+const EntryForm = ({ metricId }) => {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const dispatch = useDispatch();
+
+  const handleSubmit = (values) => {
+    const entry = {
+      metricId: parseInt(metricId),
+      rating: values.rating,
+      author: values.author,
+      text: values.entryText,
+      date: new Date(Date.now()).toISOString(),
+    };
+
+    console.log('entry:', entry);
+    dispatch(addEntry(entry));
+    setModalOpen(false);
+  };
+  return (
+    <>
+      <Button outline onClick={() => setModalOpen(true)}>
+        <i className='fa fa-pencil fa-lg' /> Add Entry
+      </Button>
+
+      <Modal isOpen={modalOpen}>
+        <ModalHeader toggle={() => setModalOpen(false)}>Add Entry</ModalHeader>
+        <ModalBody>
+          <Formik
+            initialValues={{ rating: undefined, author: '', entryText: '' }}
+            onSubmit={handleSubmit}
+            validate={validateEntryForm}
+          >
+            <Form>
+              <FormGroup>
+                <Label htmlFor='rating'>Rating</Label>
+                <Field name='rating' as='select' className='form-control'>
+                  <option>Select...</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </Field>
+
+                <ErrorMessage name='rating'>
+                  {(msg) => <p className='text-danger'>{msg}</p>}
+                </ErrorMessage>
+              </FormGroup>
+              <FormGroup>
+                <Label htmlFor='author'>Your Name</Label>
+                <Field
+                  name='author'
+                  placeholder='Your Name'
+                  className='form-control'
+                />
+
+                <ErrorMessage name='author'>
+                  {(msg) => <p className='text-danger'>{msg}</p>}
+                </ErrorMessage>
+              </FormGroup>
+              <FormGroup>
+                <Label htmlFor='entryText'>Entry</Label>
+                <Field
+                  name='entryText'
+                  as='textarea'
+                  rows='12'
+                  className='form-control'
+                />
+              </FormGroup>
+
+              <Button type='submit' color='primary'>
+                Submit
+              </Button>
+            </Form>
+          </Formik>
+        </ModalBody>
+      </Modal>
+    </>
+  );
+};
+export default EntryForm;
+
+// import { useState } from 'react';
+// import {
+//   Button,
+//   Modal,
+//   ModalHeader,
+//   ModalBody,
+//   FormGroup,
+//   Label,
+// } from 'reactstrap';
+// import { Formik, Field, Form, ErrorMessage } from 'formik';
+// import { validateEntryForm } from '../../utils/validateEntryForm';
+
+// const EntryForm = ({ metricId }) => {
+//   const [modalOpen, setModalOpen] = useState(0);
+//   const handleSubmit = (values) => {
+//     const entry = {
+//       metricId: parseInt(metricId),
+//       rating: values.rating,
+//       author: values.author,
+//       text: values.entryText,
+//     };
+//     console.log(entry);
+//     setModalOpen(false);
+//   };
+//   return (
+//     <>
+//       <Button outline onClick={() => setModalOpen(true)}>
+//         <i className='fa fa-pencil fa-lg' /> Add Entry
+//       </Button>
+
+//       <Modal isOpen={modalOpen}>
+//         <ModalHeader toggle={() => setModalOpen(false)}>Add Entry</ModalHeader>
+//         <ModalBody>
+//           <Formik
+//             initialValues={{ rating: undefined, author: '', entryText: '' }}
+//             onSubmit={handleSubmit}
+//             validate={validateEntryForm}
+//           >
+//             <Form>
+//               <FormGroup>
+//                 <Label htmlFor='rating'>Rating</Label>
+//                 <Field name='rating' as='select' className='form-control'>
+//                   <option>Select...</option>
+//                   <option>1</option>
+//                   <option>2</option>
+//                   <option>3</option>
+//                   <option>4</option>
+//                   <option>5</option>
+//                 </Field>
+//                 <ErrorMessage name='rating'>
+//                   {(msg) => <p className='text-danger'>{msg}</p>}
+//                 </ErrorMessage>
+//               </FormGroup>
+//               <FormGroup>
+//                 <Label htmlFor='author'>Your Name</Label>
+//                 <Field
+//                   name='author'
+//                   placeholder='Your Name'
+//                   className='form-control'
+//                 />
+//                 <ErrorMessage name='author'>
+//                   {(msg) => <p className='text-danger'>{msg}</p>}
+//                 </ErrorMessage>
+//               </FormGroup>
+//               <FormGroup>
+//                 <Label htmlFor='entryText'>Entry</Label>
+//                 <Field
+//                   name='entryText'
+//                   as='textarea'
+//                   rows='12'
+//                   className='form-control'
+//                 />
+//               </FormGroup>
+//               <Button type='submit' color='primary'>
+//                 Submit
+//               </Button>
+//             </Form>
+//           </Formik>
+//         </ModalBody>
+//       </Modal>
+//     </>
+//   );
+// };
+
+// export default EntryForm;

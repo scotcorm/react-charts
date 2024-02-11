@@ -1,4 +1,4 @@
-export const DATA = [
+export const METRIC = [
   {
     id: 0,
     year: '2023',
