@@ -5,6 +5,7 @@ import { selectEntryById } from '../features/entries/entriesSlice';
 import EntryDetail from '../features/entries/EntryDetail';
 import EntriesList from '../features/entries/EntriesList';
 // import SubHeader from '../components/SubHeader';
+import JsonDataDisplay from '../components/JsonDataDisplay';
 
 const EntryDetailPage = () => {
   const { entryId } = useParams();
@@ -15,8 +16,9 @@ const EntryDetailPage = () => {
     <Container>
       {/* <SubHeader current={metric.name} detail={true} /> */}
       <Row>
-        <EntryDetail entry={entry} />
-        <EntriesList entryId={entryId} />
+        {/* <EntryDetail entry={entry} />
+        <EntriesList entryId={entryId} /> */}
+        <JsonDataDisplay />
       </Row>
     </Container>
   );

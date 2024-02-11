@@ -18,6 +18,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<HomePage />} />
+        {/* <Route path='details/:entryId' element={<EntryDetailPage />} /> */}
         <Route path='details' element={<EntryDetailPage />} />
       </Routes>
 

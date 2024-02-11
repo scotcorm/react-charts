@@ -1,6 +1,6 @@
 import JsonData from '../data/mainData.json';
 //import JsonData from '../data/qaData.json';
-import DataForm from '../features/modaldata/DataForm';
+import EntryForm from '../features/modaldata/EntryForm';
 
 function JsonDataDisplay() {
   const DisplayData = JsonData.map((info) => {
@@ -26,7 +26,7 @@ function JsonDataDisplay() {
       >
         <div>Detailed Monthly Data</div>
         <div style={{ padding: 20 }}>
-          <DataForm />
+          <EntryForm dataId={0} />
         </div>
       </h1>
       <table className='table table-striped'>
