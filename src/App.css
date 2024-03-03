@@ -8,6 +8,62 @@ h3,
 .card-body > .card-title {
   font-family: 'Lobster', cursive;
 } */
+.chart-container {
+  width: 600px;
+  margin: 20px;
+}
+
+.chart-container-two {
+  width: 600px;
+  margin: 20px;
+  padding-left: 25px;
+}
+
+.data-container {
+  margin: 20px;
+}
+.app-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 1rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 70%;
+}
+
+form {
+  display: flex;
+  gap: 5px;
+}
+
+form td:last-child {
+  display: flex;
+  /* justify-content: space-evenly; */
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 1rem;
+}
+
+th,
+td {
+  border: 1px solid #ffffff;
+  text-align: left;
+  padding-left: 55px;
+  /* padding: 8px; */
+  /* font-size: 32px; */
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
 
 .card-title {
   font-weight: 500;

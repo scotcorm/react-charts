@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useState, Fragment } from 'react';
 import { Chart as ChartJS, defaults } from 'chart.js/auto';
 import { Bar, Doughnut, Line } from 'react-chartjs-2';
 import { Col, Row, Container, Card, CardBody, CardHeader } from 'reactstrap';
@@ -9,11 +9,12 @@ import '../../App.css';
 //import './App.css';
 //import Footer from '../components/Footer';
 //import Header from '../components/Header';
-import mainData from '../../data/mainData.json';
+//import mainData from '../../data/mainData.json';
 //import mainData from '../data/mainData.json';
-import JsonDataDisplay from '../../components/JsonDataDisplay';
-
+//import JsonDataDisplay from '../../components/JsonDataDisplay';
+import data from '../../data/mainData.json';
 import qaData from '../../data/qaData.json';
+import { setMetrics } from '../../pages/MetricsDetails';
 
 defaults.maintainAspectRatio = false;
 defaults.responsive = true;
@@ -24,6 +25,7 @@ defaults.plugins.title.font.size = 20;
 defaults.plugins.title.color = 'black';
 
 const ChartCard = () => {
+  const [metrics, setMetrics] = useState(data);
   return (
     <Container>
       <Row className='row-content'>
@@ -42,11 +44,11 @@ const ChartCard = () => {
             <div className='dataCard firstCard'>
               <Line
                 data={{
-                  labels: mainData.map((data) => data.label),
+                  labels: metrics.map((metric) => metric.label),
                   datasets: [
                     {
                       label: 'Average Cohort',
-                      data: mainData.map((data) => data.cohort),
+                      data: metrics.map((metric) => metric.cohort),
                       backgroundColor: '#FF3030',
                       borderColor: '#FF3030',
                     },
@@ -69,11 +71,11 @@ const ChartCard = () => {
             <div className='dataCard firstCard'>
               <Line
                 data={{
-                  labels: mainData.map((data) => data.label),
+                  labels: metrics.map((metric) => metric.label),
                   datasets: [
                     {
                       label: 'Average Completed',
-                      data: mainData.map((data) => data.completed),
+                      data: metrics.map((metric) => metric.completed),
                       backgroundColor: '#064FF0',
                       borderColor: '#064FF0',
                     },
@@ -96,11 +98,11 @@ const ChartCard = () => {
             <div className='dataCard secondCard'>
               <Bar
                 data={{
-                  labels: mainData.map((data) => data.label),
+                  labels: metrics.map((metric) => metric.label),
                   datasets: [
                     {
                       label: 'Overlaps Completed',
-                      data: mainData.map((data) => data.overlaps),
+                      data: metrics.map((metric) => metric.overlaps),
                       backgroundColor: [
                         'rgba(43, 63, 229, 0.8)',
                         'rgba(250, 192, 19, 0.8)',

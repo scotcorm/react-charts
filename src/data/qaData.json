@@ -1,11 +1,15 @@
 [
   {
+    "label": "QA Exceed",
+    "value": 2
+  },
+  {
     "label": "QA Meet",
     "value": 96
   },
 
   {
     "label": "QA Fail",
-    "value": 4
+    "value": 2
   }
 ]

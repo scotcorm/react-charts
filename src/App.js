@@ -4,7 +4,7 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 
 import './App.css';
-import EntryDetailPage from './pages/EntryDetailPage';
+import MetricsDetails from './pages/MetricsDetails';
 
 function App() {
   // const dispatch = useDispatch();
@@ -12,6 +12,10 @@ function App() {
   // useEffect(() => {
   //   dispatch(fetchData());
   // }, [dispatch]);
+  // const [metrics, setMetrics] = useState(data);
+  // const [addFormData, setAddFormData] = useState({
+
+  // });
 
   return (
     <div className='App'>
@@ -19,7 +23,7 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage />} />
         {/* <Route path='details/:entryId' element={<EntryDetailPage />} /> */}
-        <Route path='details' element={<EntryDetailPage />} />
+        {/* <Route path='details' element={<MetricsDetails />} /> */}
       </Routes>
 
       <Footer />
