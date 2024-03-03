@@ -15,6 +15,8 @@ import '../../App.css';
 import data from '../../data/mainData.json';
 import qaData from '../../data/qaData.json';
 import { setMetrics } from '../../pages/MetricsDetails';
+import MetricsDetails from '../../pages/MetricsDetails';
+import EntryDetailPage from '../../pages/MetricsDetails';
 
 defaults.maintainAspectRatio = false;
 defaults.responsive = true;
@@ -26,6 +28,19 @@ defaults.plugins.title.color = 'black';
 
 const ChartCard = () => {
   const [metrics, setMetrics] = useState(data);
+
+  // function update() {
+  //   // const myChart1 = new Chart(document.getElementById('myChart1'), config);
+  //   // console.log('test');
+  //   //const line1 = document.getElementById('line1');
+  //   // const line2 = document.getElementById('line2');
+  //   // const line3 = document.getElementById('line3');
+
+  //   //console.log(EntryDetailPage.newMetrics.cohort[1]);
+  //   // myChart1.data.datasets[1].data.push(line2.value);
+  //   // myChart1.data.datasets[2].data.push(line3.value);
+  // }
+
   return (
     <Container>
       <Row className='row-content'>
@@ -41,13 +56,14 @@ const ChartCard = () => {
 
         <div className='App'>
           <div className='data'>
-            <div className='dataCard firstCard'>
+            <div id='myChart14'>
               <Line
                 data={{
                   labels: metrics.map((metric) => metric.label),
                   datasets: [
                     {
                       label: 'Average Cohort',
+
                       data: metrics.map((metric) => metric.cohort),
                       backgroundColor: '#FF3030',
                       borderColor: '#FF3030',
@@ -67,9 +83,19 @@ const ChartCard = () => {
                   },
                 }}
               />
+              {/* adding the button */}
+              {/* <div className='chartCard'>
+                 <canvas id='myChart1'></canvas>  
+                <input id='line1' type='number' />
+                <input id='line2' type='number' />
+                <input id='line3' type='number' />
+                <button id='line1' onClick={update}>
+                  Update
+                </button>
+              </div> */}
             </div>
-            <div className='dataCard firstCard'>
-              <Line
+            <div className='dataCard secondCard'>
+              <Bar
                 data={{
                   labels: metrics.map((metric) => metric.label),
                   datasets: [

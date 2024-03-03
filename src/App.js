@@ -23,7 +23,7 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage />} />
         {/* <Route path='details/:entryId' element={<EntryDetailPage />} /> */}
-        {/* <Route path='details' element={<MetricsDetails />} /> */}
+        <Route path='details' element={<MetricsDetails />} />
       </Routes>
 
       <Footer />

@@ -8,9 +8,10 @@ h3,
 .card-body > .card-title {
   font-family: 'Lobster', cursive;
 } */
-.chart-container {
+.chart-container-three {
   width: 600px;
   margin: 20px;
+  padding-left: 3rem;
 }
 
 .chart-container-two {
@@ -137,12 +138,15 @@ h2 {
 }
 
 .firstCard {
-  width: 92%;
-  height: 20rem;
+  width: 70%;
+  /* height: 20rem; */
+  /* padding-bottom: 1rem; */
+  margin-bottom: 3rem;
+  padding-left: 5rem;
 }
 
 .secondCard {
-  width: 50%;
+  width: 40%;
   height: 20rem;
 }
 
@@ -167,4 +171,50 @@ h2 {
 
   color: black;
   font-size: 30px;
+}
+
+.App {
+  /* height: 50vh; */
+  width: 100%;
+  /* display: flex;
+  flex-direction: row; */
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  /* gap: 2vw; */
+  /* flex-wrap: wrap; */
+  /* background-color: #ddd; */
+}
+
+.dataCard {
+  /* background-color: #efefef; */
+  border-radius: 0.5em;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 1em;
+  width: 45%;
+}
+
+.chartBox {
+  width: 800px;
+  height: 15%;
+}
+
+#myChart12 {
+  padding-top: 4rem;
+}
+
+#myChart14 {
+  width: 75%;
+  height: 20rem;
+  padding-bottom: 1rem;
+  margin-bottom: 3rem;
+  padding-left: 5rem;
+}
+
+#myChart15 {
+  width: 45%;
+  height: 20rem;
+  padding-bottom: 1rem;
+  margin-bottom: 3rem;
+  padding-left: 5rem;
 }
